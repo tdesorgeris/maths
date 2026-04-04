@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+		<title>Quiz Automatismes | Thomas DESORGERIS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Quiz d'automatismes pour le lycée : 12 questions de type QCM par thème ou en mode mélange." />
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
+					<header id="header">
+						<a href="lycee.html" class="logo"><strong>Lycée</strong> | Quiz automatismes</a>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/thomas-d-26753b137?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						</ul>
+					</header>
+
+					<section>
+						<header class="main">
+							<h1>Quiz Automatismes</h1>
+						</header>
+
+						<p>Cette page propose un entraînement rapide sous forme de QCM. Chaque session contient 12 questions, avec 4 propositions et une seule bonne réponse à chaque fois.</p>
+
+						<div class="chapter-card">
+							<h2>Choisir un thème</h2>
+							<form id="automatismes-quiz-form">
+								<div class="generator-difficulty">
+									<h3>Thèmes disponibles</h3>
+									<div id="automatismes-theme-options" class="generator-difficulty-options" aria-live="polite"></div>
+								</div>
+								<p id="automatismes-message" class="generator-message" role="status"></p>
+								<ul class="actions">
+									<li><button type="submit" class="button primary generator-submit-button">Lancer le quiz</button></li>
+									<li><button type="button" id="automatismes-reset" class="button generator-clear-button">Réinitialiser</button></li>
+								</ul>
+							</form>
+						</div>
+
+						<div class="chapter-card generator-result-card">
+							<h2>Question</h2>
+							<div id="automatismes-quiz-output" class="quiz-output">
+								<p class="generator-placeholder">Aucune question affichée pour le moment.</p>
+							</div>
+							<div id="automatismes-feedback" class="automatismes-feedback-box" hidden></div>
+							<ul class="actions quiz-score-actions">
+								<li><button type="button" id="automatismes-validate" class="button primary generator-submit-button" disabled>Valider</button></li>
+								<li><button type="button" id="automatismes-next" class="button" disabled>Question suivante</button></li>
+							</ul>
+						</div>
+
+						<ul class="actions">
+							<li><a href="lycee.html" class="button">Retour au lycée</a></li>
+						</ul>
+					</section>
+				</div>
+			</div>
+
+			<div id="sidebar">
+				<div class="inner">
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu Lycée</h2>
+						</header>
+						<ul>
+							<li><a href="automatisme-lycee-quiz.html">Quiz automatismes</a></li>
+							<li><a href="seconde.html">Seconde</a></li>
+							<li><a href="premiere-specialite.html">Première spécialité</a></li>
+							<li><a href="terminale-specialite.html">Terminale spécialité</a></li>
+							<li><a href="mathematiques-expertes.html">Mathématiques expertes</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)'], ['$', '$']],
+					displayMath: [['\\[', '\\]'], ['$$', '$$']]
+				},
+				svg: {
+					fontCache: 'global'
+				}
+			};
+		</script>
+		<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+		<script src="assets/data/automatismes-lycee/index.js"></script>
+		<script src="assets/data/automatismes-lycee/calcul-litteral/questions.js"></script>
+		<script src="assets/data/automatismes-lycee/fonctions/questions.js"></script>
+		<script src="assets/data/automatismes-lycee/probabilites-statistiques/questions.js"></script>
+		<script src="assets/js/automatismes-lycee-quiz.js"></script>
+	</body>
+</html>
