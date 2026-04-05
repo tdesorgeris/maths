@@ -2,29 +2,53 @@ window.registerKholleTheme({
   id: "series-entieres",
   track: "spe",
   name: "Séries entières",
-  description: "Rayon de convergence, somme, dérivation et intégration terme à terme.",
+  description: "Rayon de convergence, dérivation, intégration et développements analytiques.",
   courseQuestions: [
-    "Définir le rayon de convergence d'une série entière $\\sum a_n x^n$.",
-    "Énoncer un résultat de dérivation terme à terme d'une série entière à l'intérieur de son disque de convergence."
+    "Question de cours à rédiger pour le thème Séries entières.",
+    "Deuxième question de cours à rédiger pour le thème Séries entières."
   ],
   exercises: [
     {
-      title: "Exercice fictif SE1",
+      title: "Exercice 1",
       track: "spe",
       difficulty: 1,
-      statement: "Déterminer le rayon de convergence de la série entière fictive $\\sum_{n \\ge 0} \\frac{n+1}{2^n} x^n$."
+      statement: "Énoncé de difficulté 1 à rédiger pour le thème Séries entières.",
+      answer: ""
     },
     {
-      title: "Exercice fictif SE2",
+      title: "Exercice 2",
+      track: "spe",
+      difficulty: 1,
+      statement: "Deuxième énoncé de difficulté 1 à rédiger pour le thème Séries entières.",
+      answer: ""
+    },
+    {
+      title: "Exercice 3",
       track: "spe",
       difficulty: 2,
-      statement: "Calculer explicitement la somme de la série entière fictive $\\sum_{n \\ge 1} n x^n$ pour $|x|<1$, puis en déduire une expression fermée."
+      statement: "Énoncé de difficulté 2 à rédiger pour le thème Séries entières.",
+      answer: ""
     },
     {
-      title: "Exercice fictif SE3",
+      title: "Exercice 4",
+      track: "spe",
+      difficulty: 2,
+      statement: "Deuxième énoncé de difficulté 2 à rédiger pour le thème Séries entières.",
+      answer: ""
+    },
+    {
+      title: "Exercice 5",
       track: "spe",
       difficulty: 3,
-      statement: "Résoudre une équation différentielle fictive à l'aide d'un développement en série entière et discuter l'unicité de la solution obtenue."
+      statement: "Énoncé de difficulté 3 à rédiger pour le thème Séries entières.",
+      answer: ""
+    },
+    {
+      title: "Exercice 6",
+      track: "spe",
+      difficulty: 3,
+      statement: "Deuxième énoncé de difficulté 3 à rédiger pour le thème Séries entières.",
+      answer: ""
     }
   ]
 });
