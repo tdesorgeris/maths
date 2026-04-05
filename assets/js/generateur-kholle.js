@@ -68,8 +68,8 @@
           '<label>' +
             '<input type="checkbox" name="theme" value="' + escapeHtml(theme.id) + '">' +
             '<span>' +
-              '<strong>' + escapeHtml(theme.name) + '</strong>' +
-              '<span>' + escapeHtml(theme.description) + '</span>' +
+              '<span class="generator-theme-name">' + escapeHtml(theme.name) + '</span>' +
+              '<span class="generator-theme-description">' + escapeHtml(theme.description) + '</span>' +
             '</span>' +
           '</label>' +
         '</div>'
