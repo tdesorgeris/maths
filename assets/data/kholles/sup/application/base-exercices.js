@@ -26,7 +26,7 @@ window.registerKholleTheme({
       title: "APPLI.003",
       track: "sup",
       difficulty: 2,
-      statement: "Soit $f\\in \\mathbb{L}(\\R)$ une application linéaire.",
+      statement: "Soit $f\\in \\mathcal{L}(\\R)$ une application linéaire.",
       answer: ""
     },
     {
