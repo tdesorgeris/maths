@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+		<title>Calcul ta moyenne | Thomas DESORGERIS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Outil lycée pour estimer sa moyenne de mathématiques à partir des DS, des évaluations et de la participation." />
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
+					<header id="header">
+						<a href="lycee.html" class="logo"><strong>Lycée</strong> | Calcul ta moyenne</a>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/thomas-d-26753b137?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						</ul>
+					</header>
+
+					<section>
+						<header class="main">
+							<h1>Calcul ta moyenne</h1>
+						</header>
+
+						<p>Cette page aide à estimer ta moyenne de mathématiques à partir de tes DS, de tes évaluations et d'une note de participation attribuée selon ton investissement en classe.</p>
+
+						<div class="chapter-card moyenne-card">
+							<h2>Renseigner tes notes</h2>
+							<form id="moyenne-form">
+								<div class="moyenne-grid">
+									<div class="moyenne-field">
+										<label for="ds-count">Combien as-tu eu de DS ?</label>
+										<input type="number" id="ds-count" name="ds-count" min="0" max="12" value="0" />
+									</div>
+									<div class="moyenne-field">
+										<label for="evaluation-count">Combien as-tu eu d'évaluations ?</label>
+										<input type="number" id="evaluation-count" name="evaluation-count" min="0" max="30" value="0" />
+									</div>
+								</div>
+
+								<div class="moyenne-field-group">
+									<h3>Notes de DS</h3>
+									<div id="ds-inputs" class="moyenne-input-list"></div>
+								</div>
+
+								<div class="moyenne-field-group">
+									<h3>Notes d'évaluations</h3>
+									<div id="evaluation-inputs" class="moyenne-input-list"></div>
+								</div>
+
+								<div class="moyenne-field-group">
+									<h3>Participation et attitude en classe</h3>
+									<p>Choisis le niveau qui correspond le mieux à ton trimestre.</p>
+									<div id="participation-options" class="moyenne-participation-options">
+										<button type="button" class="button moyenne-participation-button" data-participation-value="18">Très sérieux, actif et exemplaire</button>
+										<button type="button" class="button moyenne-participation-button" data-participation-value="15">Bon trimestre dans l'ensemble</button>
+										<button type="button" class="button moyenne-participation-button" data-participation-value="12">Trimestre correct mais irrégulier</button>
+										<button type="button" class="button moyenne-participation-button" data-participation-value="10">Participation trop faible</button>
+									</div>
+								</div>
+
+								<p id="moyenne-message" class="generator-message" role="status"></p>
+
+								<ul class="actions">
+									<li><button type="submit" class="button primary generator-submit-button">Calculer ma moyenne</button></li>
+									<li><button type="button" id="moyenne-reset" class="button generator-clear-button">Réinitialiser</button></li>
+								</ul>
+							</form>
+						</div>
+
+						<div id="moyenne-result" class="chapter-card moyenne-result-card" hidden>
+							<h2>Résultat</h2>
+							<p class="moyenne-final-line">Moyenne estimée en mathématiques : <strong id="moyenne-final-value">--</strong> / 20</p>
+							<p id="moyenne-breakdown" class="moyenne-breakdown"></p>
+							<div class="moyenne-chart-layout">
+								<div class="moyenne-chart-panel">
+									<h3>Camembert des parts de la moyenne</h3>
+									<svg id="moyenne-chart" class="moyenne-chart" viewBox="0 0 360 360" aria-labelledby="moyenne-chart-title" role="img">
+										<title id="moyenne-chart-title">Répartition des parts de la moyenne</title>
+									</svg>
+								</div>
+								<div class="moyenne-chart-panel">
+									<h3>Détail des parts</h3>
+									<ul id="moyenne-legend" class="moyenne-legend"></ul>
+								</div>
+							</div>
+						</div>
+
+						<ul class="actions">
+							<li><a href="lycee.html" class="button">Retour au lycée</a></li>
+						</ul>
+					</section>
+				</div>
+			</div>
+
+			<div id="sidebar">
+				<div class="inner">
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu Lycée</h2>
+						</header>
+						<ul>
+							<li><a href="calcul-ta-moyenne.html">Calcul ta moyenne</a></li>
+							<li><a href="automatisme-lycee-quiz.html">Quiz automatismes</a></li>
+							<li><a href="seconde.html">Seconde</a></li>
+							<li><a href="premiere-specialite.html">Première spécialité</a></li>
+							<li><a href="terminale-specialite.html">Terminale spécialité</a></li>
+							<li><a href="mathematiques-expertes.html">Mathématiques expertes</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/calcul-ta-moyenne.js"></script>
+	</body>
+</html>
