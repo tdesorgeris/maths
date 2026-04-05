@@ -258,6 +258,118 @@ hr {
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   gap: 2em; }
 
+.moyenne-card,
+.moyenne-result-card {
+  display: grid;
+  gap: 1.5em; }
+
+.moyenne-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.25em; }
+
+.moyenne-field,
+.moyenne-note-field {
+  display: grid;
+  gap: 0.45em; }
+
+.moyenne-field label,
+.moyenne-note-field span,
+.moyenne-field-group h3 {
+  color: #3d4449;
+  font-weight: 600; }
+
+.moyenne-field input,
+.moyenne-note-field input {
+  background: #ffffff;
+  border: solid 1px rgba(210, 215, 217, 0.75);
+  border-radius: 0.375em;
+  color: #3d4449;
+  padding: 0 1em; }
+
+.moyenne-field input {
+  height: 3.25em; }
+
+.moyenne-input-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1em; }
+
+.moyenne-field-group {
+  display: grid;
+  gap: 0.9em; }
+
+.moyenne-participation-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.9em; }
+
+.moyenne-participation-button {
+  height: auto;
+  min-height: 4.5em;
+  line-height: 1.4;
+  padding: 0.9em 1.1em;
+  text-transform: none;
+  white-space: normal; }
+
+.moyenne-participation-button.is-selected {
+  background: #a627f5;
+  border-color: #a627f5;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.12);
+  color: #ffffff !important; }
+
+.moyenne-final-line {
+  font-size: 1.2em;
+  margin-bottom: 0; }
+
+.moyenne-breakdown {
+  margin-bottom: 0; }
+
+.moyenne-chart-layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 1.2fr) minmax(16rem, 1fr);
+  gap: 1.5em;
+  align-items: start; }
+
+.moyenne-chart-panel {
+  background: rgba(230, 235, 237, 0.2);
+  border-radius: 0.75em;
+  padding: 1.2em; }
+
+.moyenne-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%; }
+
+.moyenne-chart-text {
+  fill: #3d4449;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700; }
+
+.moyenne-legend {
+  display: grid;
+  gap: 0.85em;
+  list-style: none;
+  padding-left: 0; }
+
+.moyenne-legend li {
+  align-items: center;
+  display: flex;
+  gap: 0.75em; }
+
+.moyenne-legend-color {
+  border-radius: 999px;
+  display: inline-block;
+  flex: 0 0 1em;
+  height: 1em;
+  width: 1em; }
+
+@media screen and (max-width: 980px) {
+  .moyenne-chart-layout {
+    grid-template-columns: 1fr; } }
+
 .chapter-card {
   border: solid 1px rgba(210, 215, 217, 0.75);
   border-radius: 0.375em;
@@ -396,6 +508,11 @@ hr {
   #automatismes-quiz-form .generator-submit-button:focus,
   #automatismes-quiz-form .generator-submit-button:active,
   #automatismes-quiz-form .generator-submit-button:visited,
+  #moyenne-form .generator-submit-button,
+  #moyenne-form .generator-submit-button:hover,
+  #moyenne-form .generator-submit-button:focus,
+  #moyenne-form .generator-submit-button:active,
+  #moyenne-form .generator-submit-button:visited,
   #course-quiz-form .generator-submit-button,
   #course-quiz-form .generator-submit-button:hover,
   #course-quiz-form .generator-submit-button:focus,
