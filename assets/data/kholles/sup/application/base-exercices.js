@@ -23,10 +23,10 @@ window.registerKholleTheme({
       answer: ""
     },
     {
-      title: "Exercice 3",
+      title: "APPLI.003",
       track: "sup",
       difficulty: 2,
-      statement: "Énoncé de difficulté 2 à rédiger pour le thème Application.",
+      statement: "Soit $f\\in \\mathbb{L}(\\R)$ une application linéaire.",
       answer: ""
     },
     {
