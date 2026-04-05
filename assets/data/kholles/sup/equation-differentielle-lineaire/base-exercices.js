@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "equation-differentielle-lineaire",
   track: "sup",
   name: "Équation différentielle linéaire",
-  description: "Thème à compléter.",
+  description: "Résolution des équations différentielles linéaires d'ordre 1 et 2.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Équation différentielle linéaire.",
     "Deuxième question de cours à rédiger pour le thème Équation différentielle linéaire."

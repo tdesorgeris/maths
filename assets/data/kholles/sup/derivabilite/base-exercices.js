@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "derivabilite",
   track: "sup",
   name: "Dérivabilité",
-  description: "Thème à compléter.",
+  description: "Nombre dérivé, dérivée, théorèmes fondamentaux et variations.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Dérivabilité.",
     "Deuxième question de cours à rédiger pour le thème Dérivabilité."

@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "fractions-rationnelles",
   track: "sup",
   name: "Fractions rationnelles",
-  description: "Thème à compléter.",
+  description: "Décomposition en éléments simples et calcul sur les fractions rationnelles.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Fractions rationnelles.",
     "Deuxième question de cours à rédiger pour le thème Fractions rationnelles."

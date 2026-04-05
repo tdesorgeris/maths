@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "denombrement",
   track: "sup",
   name: "Dénombrement",
-  description: "Thème à compléter.",
+  description: "Arrangements, permutations, combinaisons et comptages classiques.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Dénombrement.",
     "Deuxième question de cours à rédiger pour le thème Dénombrement."

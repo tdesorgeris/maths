@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "espaces-euclidiens",
   track: "sup",
   name: "Espaces euclidiens",
-  description: "Thème à compléter.",
+  description: "Produit scalaire, orthogonalité, projections et bases orthonormées.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Espaces euclidiens.",
     "Deuxième question de cours à rédiger pour le thème Espaces euclidiens."

@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "fonctions-de-deux-variables",
   track: "sup",
   name: "Fonctions de deux variables",
-  description: "Thème à compléter.",
+  description: "Dérivées partielles, gradients, extrema et étude locale en dimension 2.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Fonctions de deux variables.",
     "Deuxième question de cours à rédiger pour le thème Fonctions de deux variables."

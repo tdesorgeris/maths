@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "matrices-et-applications-lineaires",
   track: "sup",
   name: "Matrices et applications linéaires",
-  description: "Thème à compléter.",
+  description: "Applications linéaires, noyau, image et interprétation matricielle.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Matrices et applications linéaires.",
     "Deuxième question de cours à rédiger pour le thème Matrices et applications linéaires."

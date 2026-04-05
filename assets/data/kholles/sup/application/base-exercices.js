@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "application",
   track: "sup",
   name: "Application",
-  description: "Thème à compléter.",
+  description: "Applications, injections, surjections, bijections et compositions.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Application.",
     "Deuxième question de cours à rédiger pour le thème Application."

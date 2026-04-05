@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "sommes-et-produits",
   track: "sup",
   name: "Sommes et produits",
-  description: "Thème à compléter.",
+  description: "Manipulations de sigma, produits finis, télescopages et formules classiques.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Sommes et produits.",
     "Deuxième question de cours à rédiger pour le thème Sommes et produits."

@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "espaces-vectoriels",
   track: "sup",
   name: "Espaces vectoriels",
-  description: "Thème à compléter.",
+  description: "Sous-espaces, familles libres, bases, dimension et sommes.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Espaces vectoriels.",
     "Deuxième question de cours à rédiger pour le thème Espaces vectoriels."

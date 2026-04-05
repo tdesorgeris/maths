@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "analyse-asymptotique",
   track: "sup",
   name: "Analyse asymptotique",
-  description: "Thème à compléter.",
+  description: "Comparaisons, équivalents, développements limités et domination.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Analyse asymptotique.",
     "Deuxième question de cours à rédiger pour le thème Analyse asymptotique."

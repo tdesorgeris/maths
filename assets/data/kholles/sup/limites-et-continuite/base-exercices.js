@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "limites-et-continuite",
   track: "sup",
   name: "Limites et continuité",
-  description: "Thème à compléter.",
+  description: "Limites de fonctions, continuité, TVI et étude locale des fonctions.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Limites et continuité.",
     "Deuxième question de cours à rédiger pour le thème Limites et continuité."

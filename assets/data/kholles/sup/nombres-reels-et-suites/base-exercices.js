@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "nombres-reels-et-suites",
   track: "sup",
   name: "Nombres réels et suites",
-  description: "Thème à compléter.",
+  description: "Bornes, valeurs absolues, suites réelles et premiers outils d'étude.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Nombres réels et suites.",
     "Deuxième question de cours à rédiger pour le thème Nombres réels et suites."

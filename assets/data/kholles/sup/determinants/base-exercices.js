@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "determinants",
   track: "sup",
   name: "Déterminants",
-  description: "Thème à compléter.",
+  description: "Déterminants, inversibilité, calculs et interprétations algébriques.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Déterminants.",
     "Deuxième question de cours à rédiger pour le thème Déterminants."

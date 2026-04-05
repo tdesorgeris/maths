@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "anneaux-et-corps",
   track: "sup",
   name: "Anneaux et corps",
-  description: "Thème à compléter.",
+  description: "Anneaux, idéaux, corps, divisibilité et calculs algébriques.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Anneaux et corps.",
     "Deuxième question de cours à rédiger pour le thème Anneaux et corps."

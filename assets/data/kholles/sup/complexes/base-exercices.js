@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "complexes",
   track: "sup",
   name: "Complexes",
-  description: "Thème à compléter.",
+  description: "Forme algébrique, forme trigonométrique, argument, module et racines.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Complexes.",
     "Deuxième question de cours à rédiger pour le thème Complexes."

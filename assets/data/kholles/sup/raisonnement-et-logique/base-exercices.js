@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "raisonnement-et-logique",
   track: "sup",
   name: "Raisonnement et logique",
-  description: "Thème à compléter.",
+  description: "Quantificateurs, implications, raisonnements par récurrence et par l'absurde.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Raisonnement et logique.",
     "Deuxième question de cours à rédiger pour le thème Raisonnement et logique."

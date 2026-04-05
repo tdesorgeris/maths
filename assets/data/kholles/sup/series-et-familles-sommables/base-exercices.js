@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "series-et-familles-sommables",
   track: "sup",
   name: "Séries et familles sommables",
-  description: "Thème à compléter.",
+  description: "Séries numériques, convergence absolue et familles sommables.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Séries et familles sommables.",
     "Deuxième question de cours à rédiger pour le thème Séries et familles sommables."

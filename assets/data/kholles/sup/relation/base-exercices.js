@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "relation",
   track: "sup",
   name: "Relation",
-  description: "Thème à compléter.",
+  description: "Relations d'équivalence, relations d'ordre et ensembles quotients.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Relation.",
     "Deuxième question de cours à rédiger pour le thème Relation."

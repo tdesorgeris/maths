@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "convergence-des-suites",
   track: "sup",
   name: "Convergence des suites",
-  description: "Thème à compléter.",
+  description: "Limites de suites, encadrements, suites monotones et récurrences.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Convergence des suites.",
     "Deuxième question de cours à rédiger pour le thème Convergence des suites."

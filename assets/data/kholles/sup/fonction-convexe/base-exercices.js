@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "fonction-convexe",
   track: "sup",
   name: "Fonction convexe",
-  description: "Thème à compléter.",
+  description: "Convexité, inégalités, tangentes et étude qualitative des fonctions.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Fonction convexe.",
     "Deuxième question de cours à rédiger pour le thème Fonction convexe."

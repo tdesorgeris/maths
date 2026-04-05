@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "probabilites",
   track: "sup",
   name: "Probabilités",
-  description: "Thème à compléter.",
+  description: "Événements, probabilités conditionnelles, variables aléatoires usuelles.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Probabilités.",
     "Deuxième question de cours à rédiger pour le thème Probabilités."

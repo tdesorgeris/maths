@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "methode-d-integration",
   track: "sup",
   name: "Méthode d'intégration",
-  description: "Thème à compléter.",
+  description: "Intégration par parties, changement de variable et primitives usuelles.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Méthode d'intégration.",
     "Deuxième question de cours à rédiger pour le thème Méthode d'intégration."

@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "groupes",
   track: "sup",
   name: "Groupes",
-  description: "Thème à compléter.",
+  description: "Groupes, sous-groupes, morphismes et ordres des éléments.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Groupes.",
     "Deuxième question de cours à rédiger pour le thème Groupes."

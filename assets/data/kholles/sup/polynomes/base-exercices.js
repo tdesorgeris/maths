@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "polynomes",
   track: "sup",
   name: "Polynômes",
-  description: "Thème à compléter.",
+  description: "Polynômes, racines, division euclidienne et factorisations.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Polynômes.",
     "Deuxième question de cours à rédiger pour le thème Polynômes."

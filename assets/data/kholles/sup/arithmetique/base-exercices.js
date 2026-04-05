@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "arithmetique",
   track: "sup",
   name: "Arithmétique",
-  description: "Thème à compléter.",
+  description: "Divisibilité, congruences, PGCD, Bezout et théorème chinois.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Arithmétique.",
     "Deuxième question de cours à rédiger pour le thème Arithmétique."

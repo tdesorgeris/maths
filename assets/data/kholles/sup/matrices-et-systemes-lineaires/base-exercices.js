@@ -2,7 +2,7 @@ window.registerKholleTheme({
   id: "matrices-et-systemes-lineaires",
   track: "sup",
   name: "Matrices et systèmes linéaires",
-  description: "Thème à compléter.",
+  description: "Résolution de systèmes, opérations sur les matrices et rang.",
   courseQuestions: [
     "Question de cours à rédiger pour le thème Matrices et systèmes linéaires.",
     "Deuxième question de cours à rédiger pour le thème Matrices et systèmes linéaires."
