@@ -477,11 +477,12 @@ hr {
   .generator-theme-option .generator-theme-name {
     color: #3d4449;
     display: block;
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 0.15em; }
   .generator-theme-option .generator-theme-description {
     color: #7f888f;
-    display: block; }
+    display: block;
+    font-weight: 400; }
 
 .generator-message {
   color: #c62828;
