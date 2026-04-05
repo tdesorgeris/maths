@@ -135,7 +135,21 @@
 			window.MathJax = {
 				tex: {
 					inlineMath: [['\\(', '\\)'], ['$', '$']],
-					displayMath: [['\\[', '\\]'], ['$$', '$$']]
+					displayMath: [['\\[', '\\]'], ['$$', '$$']],
+					macros: {
+						R: "\\mathbb{R}",
+						C: "\\mathbb{C}",
+						Q: "\\mathbb{Q}",
+						Z: "\\mathbb{Z}",
+						N: "\\mathbb{N}",
+						K: "\\mathbb{K}",
+						eps: "\\varepsilon",
+						vect: ["\\overrightarrow{#1}", 1],
+						abs: ["\\left|#1\\right|", 1],
+						norme: ["\\left\\lVert#1\\right\\rVert", 1],
+						croch: ["\\left[#1\\right]", 1],
+						paren: ["\\left(#1\\right)", 1]
+					}
 				},
 				svg: {
 					fontCache: 'global'
