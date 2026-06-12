@@ -1736,15 +1736,12 @@ label {
     display: grid;
     justify-items: center;
     gap: 14px;
-    margin: 28px -22px -40px;
-    padding: 28px 22px 34px;
-    background: var(--sidebar-bg);
-    color: var(--sidebar-text);
+    margin: -8px 0 30px;
+    padding: 8px 0 18px;
   }
 
   .mobile-home-profile .sidebar-photo-frame {
     width: min(180px, 54vw);
-    border-color: var(--sidebar-frame);
   }
 
   .mobile-home-profile .sidebar-profile-copy {
@@ -1752,11 +1749,11 @@ label {
   }
 
   .mobile-home-profile .sidebar-profile-name {
-    color: var(--sidebar-text-active);
+    color: var(--text);
   }
 
   .mobile-home-profile .sidebar-profile-bio {
-    color: var(--sidebar-text);
+    color: var(--muted);
   }
 
   h1 {
