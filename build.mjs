@@ -5,7 +5,7 @@ const siteRoot = path.resolve("/Users/thomasdesorgeris/Desktop/site(new)");
 const documentsRoot = path.join(siteRoot, "documents");
 
 const mainNav = [
-  { href: "index.html", label: "Accueil" },
+  { href: "./", page: "index.html", label: "Accueil" },
   { href: "lycee.html", label: "Lycée" },
   { href: "mes-mathematiques.html", label: "Mes mathématiques" },
   { href: "prepa.html", label: "Classes préparatoires" },
@@ -943,9 +943,10 @@ function renderSidebar(activeNav, currentPage, localLinks = []) {
   const primary = mainNav
     .map(
       (item) => {
-        const children = navChildren[item.href] || [];
-        const isHome = item.href === "index.html";
-        const isOpen = activeNav === item.href || currentPage === item.href || children.some((child) => child.href === currentPage);
+        const pageHref = item.page || item.href;
+        const children = navChildren[pageHref] || [];
+        const isHome = pageHref === "index.html";
+        const isOpen = activeNav === pageHref || currentPage === pageHref || children.some((child) => child.href === currentPage);
         const sublinks = children.length
           ? `
             <div class="sidebar-accordion-links">
@@ -969,8 +970,8 @@ function renderSidebar(activeNav, currentPage, localLinks = []) {
             <div class="sidebar-head">
               ${
                 children.length
-                  ? `<button type="button" class="sidebar-link sidebar-parent ${activeNav === item.href || currentPage === item.href ? "is-active" : ""}" aria-expanded="${isOpen ? "true" : "false"}">${escapeHtml(item.label)}</button>`
-                  : `<a href="${item.href}" class="sidebar-link ${activeNav === item.href || currentPage === item.href ? "is-active" : ""}">${escapeHtml(item.label)}</a>`
+                  ? `<button type="button" class="sidebar-link sidebar-parent ${activeNav === pageHref || currentPage === pageHref ? "is-active" : ""}" aria-expanded="${isOpen ? "true" : "false"}">${escapeHtml(item.label)}</button>`
+                  : `<a href="${item.href}" class="sidebar-link ${activeNav === pageHref || currentPage === pageHref ? "is-active" : ""}">${escapeHtml(item.label)}</a>`
               }
               ${toggle}
             </div>
@@ -1021,13 +1022,14 @@ function renderMobileHomeProfile(currentPage) {
 
 function renderLayout({ title, description, activeNav, currentPage, localLinks = [], hero, main, extraHead = "", scripts = "" }) {
   const theme = pageThemes[currentPage] || "anthracite";
+  const pageTitle = currentPage === "index.html" ? "Thomas DESORGERIS" : `${escapeHtml(title)} | Thomas DESORGERIS`;
   const profilesJson = JSON.stringify(sidebarProfiles).replaceAll("</script", "<\\/script");
   return `<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${escapeHtml(title)} | Thomas DESORGERIS</title>
+    <title>${pageTitle}</title>
     <meta name="description" content="${escapeHtml(description)}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -2168,7 +2170,7 @@ writePage(
     `,
     main: `
       <section class="page-block">
-        <a class="ghost-link" href="index.html">Revenir à l'accueil</a>
+        <a class="ghost-link" href="./">Revenir à l'accueil</a>
       </section>
     `,
   }),
