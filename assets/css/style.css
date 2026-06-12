@@ -708,6 +708,10 @@ strong {
   line-height: 1.6;
 }
 
+#premierespe-bonus-cahiervacances-pdf {
+  grid-column: 1 / -1;
+}
+
 .chapter-doc-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1636,6 +1640,11 @@ label {
     position: sticky;
     top: 0;
     z-index: 40;
+  }
+
+  .site-sidebar:not(.is-mobile-sections-open) {
+    max-height: 46px;
+    overflow: hidden;
   }
 
   .site-sidebar-inner {
