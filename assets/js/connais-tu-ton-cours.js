@@ -17,6 +17,8 @@
   var markWrongButton = document.getElementById('quiz-mark-wrong');
   var scoreCorrect = document.getElementById('quiz-score-correct');
   var scoreWrong = document.getElementById('quiz-score-wrong');
+  var scoreProgress = document.getElementById('quiz-score-progress');
+  var progressPill = document.getElementById('quiz-progress');
   var state = {
     cards: [],
     track: 'sup',
@@ -28,7 +30,7 @@
     answered: false
   };
 
-  if (!data || !Array.isArray(data.themes) || !form || !themeOptions || !output || !message || !revealButton || !validateButton || !nextButton || !prevButton || !resetButton || !notesInput || !notesPreview || !answerOutput || !compareBox || !markCorrectButton || !markWrongButton || !scoreCorrect || !scoreWrong) {
+  if (!data || !Array.isArray(data.themes) || !form || !themeOptions || !output || !message || !revealButton || !validateButton || !nextButton || !prevButton || !resetButton || !notesInput || !notesPreview || !answerOutput || !compareBox || !markCorrectButton || !markWrongButton || !scoreCorrect || !scoreWrong || !scoreProgress || !progressPill) {
     return;
   }
 
@@ -76,6 +78,9 @@
   function updateScoreboard() {
     scoreCorrect.textContent = String(state.correct);
     scoreWrong.textContent = String(state.wrong);
+    scoreProgress.textContent = state.cards.length
+      ? String(Math.min(state.currentIndex + 1, state.cards.length)) + ' / ' + String(state.cards.length)
+      : '0 / 0';
   }
 
   function renderNotesPreview() {
@@ -105,20 +110,25 @@
     if (!state.cards.length) {
       output.innerHTML = '<p class="generator-placeholder">Aucune carte affichée pour le moment.</p>';
       answerOutput.innerHTML = '<p class="generator-placeholder">Clique sur "Voir la réponse" pour afficher la réponse attendue.</p>';
+      progressPill.textContent = 'Carte 0 / 0';
       compareBox.classList.remove('is-revealed');
       renderNotesPreview();
+      updateScoreboard();
       updateButtons();
       return;
     }
 
     card = state.cards[state.currentIndex];
 
+    progressPill.textContent = 'Carte ' + String(state.currentIndex + 1) + ' / ' + String(state.cards.length);
+
     output.innerHTML =
-      '<p class="kholle-meta">Niveau : ' + escapeHtml(state.track === 'sup' ? "Sup'" : "Spé'") + '</p>' +
-      '<p class="kholle-meta">Thème : ' + escapeHtml(state.themeName) + '</p>' +
-      '<p class="kholle-meta">Carte ' + escapeHtml(String(state.currentIndex + 1)) + ' sur ' + escapeHtml(String(state.cards.length)) + '</p>' +
-      '<article class="quiz-card">' +
-        '<div class="quiz-face">' +
+      '<article class="course-card-stage">' +
+        '<div class="course-card-meta">' +
+          '<span class="course-card-meta-pill">Niveau : ' + escapeHtml(state.track === 'sup' ? "Sup'" : "Spé'") + '</span>' +
+          '<span class="course-card-meta-pill">Thème : ' + escapeHtml(state.themeName) + '</span>' +
+        '</div>' +
+        '<div class="course-card-question">' +
           '<h3 class="kholle-section-title">Question</h3>' +
           '<p>' + card.question + '</p>' +
         '</div>' +
@@ -134,6 +144,7 @@
       window.MathJax.typesetPromise([output, notesPreview, answerOutput]);
     }
 
+    updateScoreboard();
     updateButtons();
   }
 
@@ -187,6 +198,7 @@
     message.classList.remove('is-success');
     message.textContent = '';
     resetNotes();
+    progressPill.textContent = 'Carte 0 / 0';
     renderCurrentCard();
   }
 

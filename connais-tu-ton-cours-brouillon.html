@@ -4,12 +4,36 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Connais-tu ton cours ? | Thomas DESORGERIS</title>
-    <meta name="description" content="Connais-tu ton cours ? sera bientôt disponible." />
+    <meta name="description" content="Cartes de révision pour les classes préparatoires." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
     
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)'], ['$', '$']],
+          displayMath: [['\\[', '\\]'], ['$$', '$$']],
+          macros: {
+            R: "\\mathbb{R}",
+            C: "\\mathbb{C}",
+            Q: "\\mathbb{Q}",
+            Z: "\\mathbb{Z}",
+            N: "\\mathbb{N}",
+            K: "\\mathbb{K}",
+            eps: "\\varepsilon",
+            vect: ["\\overrightarrow{#1}", 1],
+            abs: ["\\left|#1\\right|", 1],
+            norme: ["\\left\\lVert#1\\right\\rVert", 1],
+            croch: ["\\left[#1\\right]", 1],
+            paren: ["\\left(#1\\right)", 1]
+          }
+        },
+        svg: { fontCache: "global" }
+      };
+    </script>
+  
   </head>
   <body>
     <div class="site-shell" data-theme="anthracite">
@@ -57,7 +81,7 @@
             </div>
             
             <div class="sidebar-accordion-links">
-              <a href="generateur-kholle.html" class="sidebar-sublink ">Générateur de khôlle</a><a href="connais-tu-ton-cours.html" class="sidebar-sublink is-active">Connais-tu ton cours ?</a>
+              <a href="generateur-kholle.html" class="sidebar-sublink ">Générateur de khôlle</a><a href="connais-tu-ton-cours.html" class="sidebar-sublink ">Connais-tu ton cours ?</a>
             </div>
           
           </div>
@@ -106,12 +130,114 @@
           <section class="hero">
             <div class="hero-copy">
               
-        <p class="eyebrow">Information</p>
+        <p class="eyebrow">Outil</p>
         <h1>Connais-tu ton cours ?</h1>
-        <p class="hero-text">Page en construction.</p>
-        
+        <p class="hero-text">Choisir un niveau et un thème, puis travailler le cours sous forme de cartes de révision.</p>
       
-           
+            </div>
+          </section>
+          <div class="contact-banner">
+            Pour me joindre, vous pouvez utiliser l'adresse électronique
+            <a class="contact-link" href="mailto:desorgeris.maths@gmail.com">desorgeris.maths@gmail.com</a>.
+          </div>
+          <section class="page-block tool-block">
+    <div class="tool-card course-setup-card">
+      <form id="course-quiz-form" class="course-setup-form">
+        <div class="course-setup-block">
+          <p class="course-section-label">Niveau</p>
+          <div class="generator-track-options">
+            <label class="generator-track-option">
+              <input type="radio" name="quiz-track" value="sup" checked />
+              <span>Sup'</span>
+            </label>
+            <label class="generator-track-option">
+              <input type="radio" name="quiz-track" value="spe" />
+              <span>Spé'</span>
+            </label>
+          </div>
+        </div>
+        <div class="course-setup-block">
+          <p class="course-section-label">Thème</p>
+          <div id="quiz-theme-options" class="generator-difficulty-options course-theme-options" aria-live="polite"></div>
+        </div>
+        <div class="course-setup-actions">
+          <p id="quiz-message" class="generator-message" role="status"></p>
+          <div class="button-row course-setup-buttons">
+            <button type="submit" class="button button-primary generator-submit-button">Lancer le quiz</button>
+            <button type="button" id="quiz-reset" class="button button-secondary generator-clear-button">Effacer</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="tool-card course-stage-card">
+      <div class="course-work-header">
+        <div class="course-work-header-main">
+          <p class="course-section-label">Carte</p>
+          <div id="quiz-progress" class="course-progress-pill">Carte 0 / 0</div>
+        </div>
+      </div>
+      <div id="quiz-output" class="quiz-output course-quiz-stage">
+        <p class="generator-placeholder">Aucune carte affichée pour le moment.</p>
+      </div>
+      <div class="course-work-grid">
+        <div class="course-panel course-notes-panel">
+          <div class="course-panel-head">
+            <p class="course-section-label">Ma réponse</p>
+            <p>Écris ta réponse en LaTeX, tes idées ou tes formules.</p>
+          </div>
+          <textarea id="quiz-notes" rows="8" placeholder="Écris ici ta réponse, tes idées ou tes formules en TeX..."></textarea>
+        </div>
+        <div class="course-panel course-preview-panel">
+          <div class="course-panel-head">
+            <p class="course-section-label">Aperçu en temps réel</p>
+            <p>Ce que tu écris s’affiche ici en direct.</p>
+          </div>
+          <div class="quiz-notes-preview-wrap course-preview-wrap">
+            <div id="quiz-notes-preview" class="quiz-notes-preview">
+              <p class="generator-placeholder">Ton aperçu apparaîtra ici.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button-row course-validation-row">
+        <button type="button" id="quiz-validate" class="button button-primary" disabled>Valider ma réponse</button>
+      </div>
+      <div id="quiz-compare-box" class="quiz-compare-box course-review-grid">
+        <div class="course-panel quiz-expected-answer">
+          <div class="course-panel-head">
+            <p class="course-section-label">Réponse attendue</p>
+            <p>Compare avec la correction.</p>
+          </div>
+          <div id="quiz-answer-output" class="quiz-answer-output">
+            <p class="generator-placeholder">Clique sur "Voir la réponse" pour afficher la réponse attendue.</p>
+          </div>
+          <div class="button-row course-reveal-row">
+            <button type="button" id="quiz-reveal" class="button button-secondary" disabled>Voir la réponse</button>
+          </div>
+        </div>
+        <div class="course-panel course-judge-panel">
+          <div class="course-panel-head">
+            <p class="course-section-label">Juge ta réponse</p>
+            <p>Sois honnête avec toi-même pour progresser.</p>
+          </div>
+          <div class="button-row quiz-inline-actions course-mark-actions">
+            <button type="button" id="quiz-mark-correct" class="button button-primary quiz-mark-correct" disabled>Bonne réponse</button>
+            <button type="button" id="quiz-mark-wrong" class="button button-secondary quiz-mark-wrong" disabled>Mauvaise réponse</button>
+          </div>
+        </div>
+      </div>
+      <div class="course-footer-bar">
+        <button type="button" id="quiz-prev" class="button button-secondary" disabled>Carte précédente</button>
+        <div class="quiz-scoreboard course-scoreboard">
+          <p class="quiz-score-item">Bonnes réponses : <strong id="quiz-score-correct">0</strong></p>
+          <p class="quiz-score-item">Mauvaises réponses : <strong id="quiz-score-wrong">0</strong></p>
+          <p class="quiz-score-item">Cartes réalisées : <strong id="quiz-score-progress">0 / 0</strong></p>
+        </div>
+        <button type="button" id="quiz-next" class="button button-secondary" disabled>Carte suivante</button>
+      </div>
+    </div>
+  </section>
+        </div>
       </main>
     </div>
     <div class="image-lightbox" data-image-lightbox hidden>
@@ -198,5 +324,13 @@
       })();
     </script>
     
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script src="assets/data/course-cards/index.js"></script>
+    <script src="assets/data/course-cards/sup/algebre-lineaire/cartes.js"></script>
+    <script src="assets/data/course-cards/sup/analyse/cartes.js"></script>
+    <script src="assets/data/course-cards/spe/espaces-vectoriels-normes/cartes.js"></script>
+    <script src="assets/data/course-cards/spe/series-entieres/cartes.js"></script>
+    <script src="assets/js/connais-tu-ton-cours.js"></script>
+  
   </body>
 </html>

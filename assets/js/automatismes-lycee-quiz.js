@@ -119,6 +119,7 @@
   function renderCurrentQuestion() {
     var question;
     var choicesHtml;
+    var letters = ['A', 'B', 'C', 'D', 'E'];
 
     if (!state.questions.length) {
       resetQuizDisplay();
@@ -140,18 +141,23 @@
 
       return (
         '<button type="button" class="' + classes.join(' ') + '" data-choice-index="' + index + '">' +
+          '<span class="automatismes-choice-badge">' + letters[index] + '</span>' +
           '<span class="automatismes-choice-text">' + choice + '</span>' +
         '</button>'
       );
     }).join('');
 
     output.innerHTML =
-      '<p class="kholle-meta">Thème : ' + escapeHtml(state.themeName) + '</p>' +
-      '<p class="kholle-meta">Score actuel : <span class="kholle-stars">' + escapeHtml(String(state.score)) + '</span> / ' + escapeHtml(String(state.currentIndex)) + '</p>' +
-      '<article class="quiz-card">' +
-        '<div class="quiz-face">' +
-          '<h3 class="kholle-section-title">Question ' + escapeHtml(String(state.currentIndex + 1)) + ' / 12</h3>' +
-          '<p>' + question.question + '</p>' +
+      '<article class="automatismes-stage">' +
+        '<div class="automatismes-stage-header">' +
+          '<span class="automatismes-progress-pill">Question ' + escapeHtml(String(state.currentIndex + 1)) + ' / 12</span>' +
+          '<div class="automatismes-stage-meta">' +
+            '<span>Thème : ' + escapeHtml(state.themeName) + '</span>' +
+            '<span>Score : ' + escapeHtml(String(state.score)) + ' / ' + escapeHtml(String(state.currentIndex)) + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="automatismes-question-panel">' +
+          '<p class="automatismes-question-text">' + question.question + '</p>' +
         '</div>' +
         '<div class="automatismes-choices">' + choicesHtml + '</div>' +
       '</article>';
@@ -177,9 +183,11 @@
 
   function showFinalScore() {
     output.innerHTML =
-      '<article class="quiz-card">' +
-        '<div class="quiz-face">' +
-          '<h3 class="kholle-section-title">Quiz terminé</h3>' +
+      '<article class="automatismes-stage automatismes-stage-final">' +
+        '<div class="automatismes-stage-header">' +
+          '<span class="automatismes-progress-pill">Quiz terminé</span>' +
+        '</div>' +
+        '<div class="automatismes-question-panel">' +
           '<p>Thème choisi : <strong>' + escapeHtml(state.themeName) + '</strong></p>' +
           '<p class="automatismes-final-score">Score final : <strong>' + escapeHtml(String(state.score)) + ' / 12</strong></p>' +
         '</div>' +
