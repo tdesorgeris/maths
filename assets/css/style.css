@@ -1641,9 +1641,9 @@ label {
   .site-sidebar-inner {
     min-height: auto;
     position: static;
-    padding: 12px 18px;
+    padding: 6px 18px;
     align-items: stretch;
-    gap: 10px;
+    gap: 6px;
     justify-content: flex-start;
   }
 
@@ -1672,9 +1672,9 @@ label {
   }
 
   .sidebar-link {
-    font-size: 18px;
-    min-height: 42px;
-    padding: 8px 0;
+    font-size: 17px;
+    min-height: 34px;
+    padding: 4px 0;
     display: grid;
     place-items: center;
   }
@@ -1708,13 +1708,13 @@ label {
   }
 
   .sidebar-head {
-    grid-template-columns: minmax(0, 1fr) 42px;
+    grid-template-columns: minmax(0, 1fr) 34px;
     gap: 6px;
   }
 
   .sidebar-toggle {
-    width: 42px;
-    height: 42px;
+    width: 34px;
+    height: 34px;
     display: grid;
     place-items: center;
   }
@@ -1736,12 +1736,15 @@ label {
     display: grid;
     justify-items: center;
     gap: 14px;
-    margin: -8px 0 30px;
-    padding: 8px 0 18px;
+    margin: 28px -22px -40px;
+    padding: 28px 22px 34px;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
   }
 
   .mobile-home-profile .sidebar-photo-frame {
     width: min(180px, 54vw);
+    border-color: var(--sidebar-frame);
   }
 
   .mobile-home-profile .sidebar-profile-copy {
@@ -1749,11 +1752,11 @@ label {
   }
 
   .mobile-home-profile .sidebar-profile-name {
-    color: var(--text);
+    color: var(--sidebar-text-active);
   }
 
   .mobile-home-profile .sidebar-profile-bio {
-    color: var(--muted);
+    color: var(--sidebar-text);
   }
 
   h1 {

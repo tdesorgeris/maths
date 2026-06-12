@@ -1045,11 +1045,11 @@ function renderLayout({ title, description, activeNav, currentPage, localLinks =
 	              ${hero}
 	            </div>
 	          </section>
-	          ${renderMobileHomeProfile(currentPage)}
 	          <div class="contact-banner">
             Pour me joindre, vous pouvez utiliser l'adresse électronique
             <a class="contact-link" href="mailto:desorgeris.maths@gmail.com">desorgeris.maths@gmail.com</a>.
           </div>
+	          ${renderMobileHomeProfile(currentPage)}
           ${main}
         </div>
       </main>
