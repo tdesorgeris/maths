@@ -124,7 +124,7 @@ textarea {
   margin-bottom: 12px;
 }
 
-.mobile-menu-toggle {
+.sidebar-home-toggle {
   display: none;
 }
 
@@ -1636,41 +1636,20 @@ label {
     justify-content: flex-start;
   }
 
-  .mobile-menu-toggle {
-    display: flex;
-    width: 100%;
-    min-height: 48px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--sidebar-text-active);
-    font-family: "Oswald", Arial, sans-serif;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-
-  .mobile-menu-glyph {
-    font-size: 1.4rem;
-    line-height: 1;
-    transition: transform 150ms ease;
-  }
-
-  .site-sidebar.is-mobile-menu-open .mobile-menu-glyph {
-    transform: rotate(180deg);
-  }
-
   .sidebar-nav {
-    display: none;
     margin: 0;
-    padding-top: 8px;
   }
 
-  .site-sidebar.is-mobile-menu-open .sidebar-nav {
+  .sidebar-home-toggle {
     display: block;
+  }
+
+  .site-sidebar:not(.is-mobile-sections-open) .sidebar-group:not(.sidebar-home-group) {
+    display: none;
+  }
+
+  .site-sidebar.is-mobile-sections-open .sidebar-home-toggle .sidebar-toggle-glyph {
+    transform: rotate(90deg);
   }
 
   .sidebar-profile {

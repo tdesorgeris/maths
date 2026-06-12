@@ -944,6 +944,7 @@ function renderSidebar(activeNav, currentPage, localLinks = []) {
     .map(
       (item) => {
         const children = navChildren[item.href] || [];
+        const isHome = item.href === "index.html";
         const isOpen = activeNav === item.href || currentPage === item.href || children.some((child) => child.href === currentPage);
         const sublinks = children.length
           ? `
@@ -959,10 +960,12 @@ function renderSidebar(activeNav, currentPage, localLinks = []) {
           : "";
         const toggle = children.length
           ? `<button type="button" class="sidebar-toggle" aria-expanded="${isOpen ? "true" : "false"}" aria-label="Afficher les sous-pages de ${escapeHtml(item.label)}"><span class="sidebar-toggle-glyph">›</span></button>`
+          : isHome
+            ? `<button type="button" class="sidebar-toggle sidebar-home-toggle" aria-expanded="false" aria-label="Afficher les sections du site" data-mobile-section-toggle><span class="sidebar-toggle-glyph">›</span></button>`
           : "";
 
         return `
-          <div class="sidebar-group ${isOpen ? "is-open" : ""}">
+          <div class="sidebar-group ${isHome ? "sidebar-home-group" : ""} ${isOpen ? "is-open" : ""}">
             <div class="sidebar-head">
               ${
                 children.length
@@ -981,11 +984,7 @@ function renderSidebar(activeNav, currentPage, localLinks = []) {
 	  return `
 	    <aside class="site-sidebar">
 	      <div class="site-sidebar-inner">
-	        <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="site-sidebar-nav" data-mobile-menu-toggle>
-	          <span>Menu</span>
-	          <span class="mobile-menu-glyph">⌄</span>
-	        </button>
-	        <nav class="sidebar-nav" id="site-sidebar-nav" aria-label="Navigation principale">
+	        <nav class="sidebar-nav" aria-label="Navigation principale">
 	          ${primary}
 	        </nav>
         <div class="sidebar-profile" data-sidebar-profile>
@@ -1049,10 +1048,10 @@ function renderLayout({ title, description, activeNav, currentPage, localLinks =
 	      window.__SIDEBAR_PROFILES__ = ${profilesJson};
 	      (() => {
 	        const sidebar = document.querySelector('.site-sidebar');
-	        const toggle = document.querySelector('[data-mobile-menu-toggle]');
+	        const toggle = document.querySelector('[data-mobile-section-toggle]');
 	        if (!sidebar || !toggle) return;
 	        toggle.addEventListener('click', () => {
-	          const isOpen = sidebar.classList.toggle('is-mobile-menu-open');
+	          const isOpen = sidebar.classList.toggle('is-mobile-sections-open');
 	          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 	        });
 	      })();
