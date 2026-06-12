@@ -1643,8 +1643,16 @@ label {
   }
 
   .site-sidebar:not(.is-mobile-sections-open) {
-    max-height: 46px;
+    height: 46px;
     overflow: hidden;
+  }
+
+  .site-sidebar:not(.is-mobile-sections-open) .site-sidebar-inner {
+    height: 46px;
+  }
+
+  .site-sidebar.is-mobile-sections-open {
+    height: auto;
   }
 
   .site-sidebar-inner {
