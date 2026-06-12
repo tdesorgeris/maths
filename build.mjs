@@ -978,12 +978,16 @@ function renderSidebar(activeNav, currentPage, localLinks = []) {
     )
     .join("");
 
-  return `
-    <aside class="site-sidebar">
-      <div class="site-sidebar-inner">
-        <nav class="sidebar-nav" aria-label="Navigation principale">
-          ${primary}
-        </nav>
+	  return `
+	    <aside class="site-sidebar">
+	      <div class="site-sidebar-inner">
+	        <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="site-sidebar-nav" data-mobile-menu-toggle>
+	          <span>Menu</span>
+	          <span class="mobile-menu-glyph">⌄</span>
+	        </button>
+	        <nav class="sidebar-nav" id="site-sidebar-nav" aria-label="Navigation principale">
+	          ${primary}
+	        </nav>
         <div class="sidebar-profile" data-sidebar-profile>
           <button type="button" class="sidebar-photo-button" data-sidebar-photo-open aria-label="Agrandir le portrait affiché">
             <div class="sidebar-photo-frame">
@@ -1042,8 +1046,17 @@ function renderLayout({ title, description, activeNav, currentPage, localLinks =
       </div>
     </div>
     <script>
-      window.__SIDEBAR_PROFILES__ = ${profilesJson};
-      document.querySelectorAll('.sidebar-toggle').forEach((button) => {
+	      window.__SIDEBAR_PROFILES__ = ${profilesJson};
+	      (() => {
+	        const sidebar = document.querySelector('.site-sidebar');
+	        const toggle = document.querySelector('[data-mobile-menu-toggle]');
+	        if (!sidebar || !toggle) return;
+	        toggle.addEventListener('click', () => {
+	          const isOpen = sidebar.classList.toggle('is-mobile-menu-open');
+	          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+	        });
+	      })();
+	      document.querySelectorAll('.sidebar-toggle').forEach((button) => {
         button.addEventListener('click', () => {
           const group = button.closest('.sidebar-group');
           if (!group) return;

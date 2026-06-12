@@ -124,6 +124,10 @@ textarea {
   margin-bottom: 12px;
 }
 
+.mobile-menu-toggle {
+  display: none;
+}
+
 .sidebar-profile {
   width: 100%;
   display: grid;
@@ -1617,15 +1621,60 @@ label {
     grid-template-columns: 1fr;
   }
 
+  .site-sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+
   .site-sidebar-inner {
     min-height: auto;
     position: static;
-    padding: 28px 22px;
+    padding: 12px 18px;
+    align-items: stretch;
+    gap: 10px;
     justify-content: flex-start;
   }
 
-  .sidebar-photo-frame {
-    width: 128px;
+  .mobile-menu-toggle {
+    display: flex;
+    width: 100%;
+    min-height: 48px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--sidebar-text-active);
+    font-family: "Oswald", Arial, sans-serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .mobile-menu-glyph {
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: transform 150ms ease;
+  }
+
+  .site-sidebar.is-mobile-menu-open .mobile-menu-glyph {
+    transform: rotate(180deg);
+  }
+
+  .sidebar-nav {
+    display: none;
+    margin: 0;
+    padding-top: 8px;
+  }
+
+  .site-sidebar.is-mobile-menu-open .sidebar-nav {
+    display: block;
+  }
+
+  .sidebar-profile {
+    display: none;
   }
 
   .sidebar-link {

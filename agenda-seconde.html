@@ -16,7 +16,11 @@
       
     <aside class="site-sidebar">
       <div class="site-sidebar-inner">
-        <nav class="sidebar-nav" aria-label="Navigation principale">
+        <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="site-sidebar-nav" data-mobile-menu-toggle>
+          <span>Menu</span>
+          <span class="mobile-menu-glyph">⌄</span>
+        </button>
+        <nav class="sidebar-nav" id="site-sidebar-nav" aria-label="Navigation principale">
           
           <div class="sidebar-group ">
             <div class="sidebar-head">
@@ -133,6 +137,15 @@
     </div>
     <script>
       window.__SIDEBAR_PROFILES__ = [{"image":"images/gromov.jpg","alt":"Portrait de Mikhaïl GROMOV","name":"Mikhaïl GROMOV","bio":"Mathématicien franco-russe de la fin du XXe siècle et du début du XXIe siècle, connu pour ses travaux en géométrie; ses espaces hyperboliques mesurent la courbure à grande échelle."},{"image":"images/alkhwarizmi.png","alt":"Portrait d'Al KHWARIZMI","name":"Al KHWARIZMI","bio":"Mathématicien persan du IXe siècle, connu pour ses travaux en algèbre; son traité systématise la résolution des équations."},{"image":"images/burnside.jpeg","alt":"Portrait de William BURNSIDE","name":"William BURNSIDE","bio":"Mathématicien britannique de la fin du XIXe siècle et du début du XXe siècle, connu pour ses travaux en théorie des groupes finis et leurs symétries."},{"image":"images/cayley.jpg","alt":"Portrait d'Arthur CAYLEY","name":"Arthur CAYLEY","bio":"Mathématicien britannique du XIXe siècle, connu pour ses travaux en algèbre; Cayley-Hamilton relie matrices et polynômes."},{"image":"images/erdos.webp","alt":"Portrait de Paul ERDŐS","name":"Paul ERDŐS","bio":"Mathématicien hongrois du XXe siècle, connu pour ses travaux en combinatoire; la méthode probabiliste prouve l'existence sans construire."},{"image":"images/fermat.jpg","alt":"Portrait de Pierre de Fermat","name":"Pierre de Fermat","bio":"Mathématicien français du XVIIe siècle, connu pour ses travaux en arithmétique; son dernier théorème interdit certaines puissances entières."},{"image":"images/frobenius.jpg","alt":"Portrait de Ferdinand Georg FROBENIUS","name":"Ferdinand Georg FROBENIUS","bio":"Mathématicien allemand de la fin du XIXe siècle et du début du XXe siècle, connu pour ses travaux en algèbre; les représentations linéarisent les symétries."},{"image":"images/galois.jpg","alt":"Portrait d'Évariste GALOIS","name":"Évariste GALOIS","bio":"Mathématicien français du XIXe siècle, connu pour ses travaux en algèbre; sa théorie relie équations polynomiales et symétries."},{"image":"images/germain.jpg","alt":"Portrait de Sophie GERMAIN","name":"Sophie GERMAIN","bio":"Mathématicienne française de la fin du XVIIIe siècle et du début du XIXe siècle, connue pour ses travaux en arithmétique et sur le dernier théorème de Fermat."},{"image":"images/godel.avif","alt":"Portrait de Kurt GÖDEL","name":"Kurt GÖDEL","bio":"Mathématicien austro-américain du XXe siècle, connu pour ses travaux en logique; l'incomplétude révèle les limites des systèmes formels."},{"image":"images/grothendieck.jpg","alt":"Portrait d'Alexandre GROTHENDIECK","name":"Alexandre GROTHENDIECK","bio":"Mathématicien français du XXe siècle, connu pour ses travaux en géométrie algébrique; les schémas unifient équations et espaces."},{"image":"images/kiyoshi.jpg","alt":"Portrait d'Itō KIYOSHI","name":"Itō KIYOSHI","bio":"Mathématicien japonais du XXe siècle, connu pour ses travaux en probabilités; le lemme d'Itō fonde le calcul aléatoire continu."},{"image":"images/lie.jpg","alt":"Portrait de Marius Sophus LIE","name":"Marius Sophus LIE","bio":"Mathématicien norvégien du XIXe siècle, connu pour ses travaux en géométrie; les groupes de Lie décrivent des symétries continues."},{"image":"images/noether.webp","alt":"Portrait d'Emmy NOETHER","name":"Emmy NOETHER","bio":"Mathématicienne allemande du XXe siècle, connue pour ses travaux en algèbre; son théorème relie symétries et lois de conservation."},{"image":"images/serre.jpg","alt":"Portrait de Jean-Pierre SERRE","name":"Jean-Pierre SERRE","bio":"Mathématicien français de la fin du XXe siècle et du début du XXIe siècle, connu pour ses travaux en topologie, géométrie algébrique et arithmétique."},{"image":"images/shimura.webp","alt":"Portrait de Gorō SHIMURA","name":"Gorō SHIMURA","bio":"Mathématicien japonais de la fin du XXe siècle et du début du XXIe siècle, connu pour ses travaux en formes modulaires et les liens entre courbes elliptiques et arithmétique."},{"image":"images/yutaka.jpeg","alt":"Portrait de Yutaka TANIYAMA","name":"Yutaka TANIYAMA","bio":"Mathématicien japonais du XXe siècle, connu pour ses travaux en théorie des nombres; sa conjecture relie courbes elliptiques et formes modulaires."}];
+      (() => {
+        const sidebar = document.querySelector(".site-sidebar");
+        const toggle = document.querySelector("[data-mobile-menu-toggle]");
+        if (!sidebar || !toggle) return;
+        toggle.addEventListener("click", () => {
+          const isOpen = sidebar.classList.toggle("is-mobile-menu-open");
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      })();
       document.querySelectorAll('.sidebar-toggle').forEach((button) => {
         button.addEventListener('click', () => {
           const group = button.closest('.sidebar-group');
