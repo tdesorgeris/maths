@@ -1633,7 +1633,9 @@ label {
 
 @media (max-width: 800px) {
   .site-shell {
+    display: block;
     grid-template-columns: 1fr;
+    min-height: 0;
   }
 
   .site-sidebar {
@@ -1746,7 +1748,7 @@ label {
   }
 
   .site-content-inner {
-    padding: 28px 22px 40px;
+    padding: 52px 22px 40px;
   }
 
   .mobile-home-profile {
