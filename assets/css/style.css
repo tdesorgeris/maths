@@ -242,6 +242,7 @@ textarea {
   text-transform: uppercase;
   font-family: "Oswald", Arial, sans-serif;
   letter-spacing: 0.02em;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sidebar-link {
@@ -294,10 +295,16 @@ textarea {
   border: 0;
   line-height: 1;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sidebar-toggle:hover {
   color: var(--sidebar-text-active);
+}
+
+.sidebar-link:focus:not(:focus-visible),
+.sidebar-toggle:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .sidebar-toggle-glyph {
@@ -318,6 +325,10 @@ textarea {
 .site-content-inner {
   max-width: 1240px;
   padding: 44px 64px 60px;
+}
+
+.mobile-home-profile {
+  display: none;
 }
 
 .hero {
@@ -1641,7 +1652,11 @@ label {
   }
 
   .sidebar-home-toggle {
-    display: block;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    color: var(--sidebar-text);
+    box-shadow: none;
   }
 
   .site-sidebar:not(.is-mobile-sections-open) .sidebar-group:not(.sidebar-home-group) {
@@ -1662,6 +1677,19 @@ label {
     padding: 8px 0;
     display: grid;
     place-items: center;
+  }
+
+  .sidebar-link:active,
+  .sidebar-toggle:active,
+  .sidebar-link:focus,
+  .sidebar-toggle:focus {
+    background: transparent;
+    color: var(--sidebar-text);
+  }
+
+  .sidebar-link.is-active:active,
+  .sidebar-link.is-active:focus {
+    color: var(--sidebar-text-active);
   }
 
   .sidebar-sublink {
@@ -1687,10 +1715,45 @@ label {
   .sidebar-toggle {
     width: 42px;
     height: 42px;
+    display: grid;
+    place-items: center;
+  }
+
+  .sidebar-toggle-glyph {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    line-height: 1;
+    transform-origin: center;
   }
 
   .site-content-inner {
     padding: 28px 22px 40px;
+  }
+
+  .mobile-home-profile {
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+    margin: -8px 0 30px;
+    padding: 8px 0 18px;
+  }
+
+  .mobile-home-profile .sidebar-photo-frame {
+    width: min(180px, 54vw);
+  }
+
+  .mobile-home-profile .sidebar-profile-copy {
+    max-width: 300px;
+  }
+
+  .mobile-home-profile .sidebar-profile-name {
+    color: var(--text);
+  }
+
+  .mobile-home-profile .sidebar-profile-bio {
+    color: var(--muted);
   }
 
   h1 {

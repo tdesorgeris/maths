@@ -187,10 +187,10 @@
       (() => {
         const profiles = Array.isArray(window.__SIDEBAR_PROFILES__) ? window.__SIDEBAR_PROFILES__ : [];
         if (!profiles.length) return;
-        const image = document.querySelector('[data-sidebar-profile-image]');
-        const name = document.querySelector('[data-sidebar-profile-name]');
-        const bio = document.querySelector('[data-sidebar-profile-bio]');
-        if (!image || !name || !bio) return;
+        const images = Array.from(document.querySelectorAll('[data-sidebar-profile-image]'));
+        const names = Array.from(document.querySelectorAll('[data-sidebar-profile-name]'));
+        const bios = Array.from(document.querySelectorAll('[data-sidebar-profile-bio]'));
+        if (!images.length || !names.length || !bios.length) return;
         const storageKey = 'siteNew.sidebarProfileIndex';
         let nextIndex = 0;
         try {
@@ -202,10 +202,16 @@
         }
         const profile = profiles[nextIndex];
         if (!profile) return;
-        image.src = profile.image;
-        image.alt = profile.alt;
-        name.textContent = profile.name;
-        bio.textContent = profile.bio;
+        images.forEach((image) => {
+          image.src = profile.image;
+          image.alt = profile.alt;
+        });
+        names.forEach((name) => {
+          name.textContent = profile.name;
+        });
+        bios.forEach((bio) => {
+          bio.textContent = profile.bio;
+        });
       })();
       (() => {
         const openButton = document.querySelector('[data-sidebar-photo-open]');

@@ -1003,6 +1003,22 @@ function renderSidebar(activeNav, currentPage, localLinks = []) {
   `;
 }
 
+function renderMobileHomeProfile(currentPage) {
+  if (currentPage !== "index.html") return "";
+  const initialProfile = sidebarProfiles[0];
+  return `
+    <div class="mobile-home-profile" data-mobile-home-profile>
+      <div class="sidebar-photo-frame">
+        <img src="${escapeHtml(initialProfile.image)}" alt="${escapeHtml(initialProfile.alt)}" data-sidebar-profile-image />
+      </div>
+      <div class="sidebar-profile-copy">
+        <p class="sidebar-profile-name" data-sidebar-profile-name>${escapeHtml(initialProfile.name)}</p>
+        <p class="sidebar-profile-bio" data-sidebar-profile-bio>${escapeHtml(initialProfile.bio)}</p>
+      </div>
+    </div>
+  `;
+}
+
 function renderLayout({ title, description, activeNav, currentPage, localLinks = [], hero, main, extraHead = "", scripts = "" }) {
   const theme = pageThemes[currentPage] || "anthracite";
   const profilesJson = JSON.stringify(sidebarProfiles).replaceAll("</script", "<\\/script");
@@ -1024,12 +1040,13 @@ function renderLayout({ title, description, activeNav, currentPage, localLinks =
       ${renderSidebar(activeNav, currentPage, localLinks)}
       <main class="site-content">
         <div class="site-content-inner">
-          <section class="hero">
-            <div class="hero-copy">
-              ${hero}
-            </div>
-          </section>
-          <div class="contact-banner">
+	          <section class="hero">
+	            <div class="hero-copy">
+	              ${hero}
+	            </div>
+	          </section>
+	          ${renderMobileHomeProfile(currentPage)}
+	          <div class="contact-banner">
             Pour me joindre, vous pouvez utiliser l'adresse électronique
             <a class="contact-link" href="mailto:desorgeris.maths@gmail.com">desorgeris.maths@gmail.com</a>.
           </div>
@@ -1078,10 +1095,10 @@ function renderLayout({ title, description, activeNav, currentPage, localLinks =
       (() => {
         const profiles = Array.isArray(window.__SIDEBAR_PROFILES__) ? window.__SIDEBAR_PROFILES__ : [];
         if (!profiles.length) return;
-        const image = document.querySelector('[data-sidebar-profile-image]');
-        const name = document.querySelector('[data-sidebar-profile-name]');
-        const bio = document.querySelector('[data-sidebar-profile-bio]');
-        if (!image || !name || !bio) return;
+	        const images = Array.from(document.querySelectorAll('[data-sidebar-profile-image]'));
+	        const names = Array.from(document.querySelectorAll('[data-sidebar-profile-name]'));
+	        const bios = Array.from(document.querySelectorAll('[data-sidebar-profile-bio]'));
+	        if (!images.length || !names.length || !bios.length) return;
         const storageKey = 'siteNew.sidebarProfileIndex';
         let nextIndex = 0;
         try {
@@ -1091,13 +1108,19 @@ function renderLayout({ title, description, activeNav, currentPage, localLinks =
         } catch (error) {
           nextIndex = 0;
         }
-        const profile = profiles[nextIndex];
-        if (!profile) return;
-        image.src = profile.image;
-        image.alt = profile.alt;
-        name.textContent = profile.name;
-        bio.textContent = profile.bio;
-      })();
+	        const profile = profiles[nextIndex];
+	        if (!profile) return;
+	        images.forEach((image) => {
+	          image.src = profile.image;
+	          image.alt = profile.alt;
+	        });
+	        names.forEach((name) => {
+	          name.textContent = profile.name;
+	        });
+	        bios.forEach((bio) => {
+	          bio.textContent = profile.bio;
+	        });
+	      })();
       (() => {
         const openButton = document.querySelector('[data-sidebar-photo-open]');
         const sidebarImage = document.querySelector('[data-sidebar-profile-image]');
